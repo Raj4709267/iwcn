@@ -1,0 +1,17 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.heading{
+    width: 70%;
+}
+
+@media (min-width: 100px) and (max-width:600px) {
+    .heading {
+        width: 90%;
+       
+    }
+    
+}
