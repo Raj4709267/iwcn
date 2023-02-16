@@ -4,9 +4,14 @@
 
 ## Tech Stack
 
-NodeJs, React, Redux, MySql, Express, ChakarUI
+**React:**
+**Redux:**
+**MySql:**
+**Express:**
+**ChakarUI:**
+**NodeJs:**
 
-**Deploying:** Vercel
+
 ## Live Link
 
 - [Deploy_Link](https://noteapp-nu.vercel.app/)
