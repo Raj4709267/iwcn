@@ -7,9 +7,13 @@
 **React:**
 
 **Redux:**
+
 **MySql:**
+
 **Express:**
+
 **ChakarUI:**
+
 **NodeJs:**
 
 
