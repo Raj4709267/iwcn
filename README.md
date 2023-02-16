@@ -1,5 +1,7 @@
 # Note app
 
+- [Deploy_Link](https://noteapp-nu.vercel.app/)
+
 
 
 ## Tech Stack
@@ -16,7 +18,6 @@
 
 **NodeJs:**
 
-- [Deploy_Link](https://noteapp-nu.vercel.app/)
 
 
 ## Features
@@ -30,7 +31,7 @@ Able to Edit any Note
 
 Able to Delete any Note
 
-Able to use in any device Like Mobie, Tab, Laptop, Desktop
+Able to use in any device Like Mobile, Tab, Laptop, Desktop
 
 
 
