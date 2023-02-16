@@ -21,16 +21,18 @@ function Edit({ data }) {
   const [title, setTitle] = useState(data.title);
   const [description, setDescription] = useState(data.description);
 
- 
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
 
   const hanedleEdit = async () => {
     const payload = { title, description };
     dispatch({ type: "API_REQUEST_START" });
 
     try {
-      const res = await axios.put(`http://localhost:8000/note/${data.id}`, payload);
-      getNotes();
+      const res = await axios.put(
+        `https://iwcn.onrender.com/note/${data.id}`,
+        payload
+      );
+      await getNotes();
       dispatch({ type: "API_REQUEST_END" });
 
       onClose();
@@ -42,7 +44,7 @@ function Edit({ data }) {
 
   async function getNotes() {
     try {
-      const res = await axios.get("http://localhost:8000/note");
+      const res = await axios.get("https://iwcn.onrender.com/note");
       dispatch({ type: "GET_ALL_NOTES", payload: res.data.message });
     } catch (err) {}
   }

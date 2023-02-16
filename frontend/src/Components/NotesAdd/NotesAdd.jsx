@@ -2,7 +2,6 @@ import { Box, Button, Input, Textarea } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import style from "./NotesAdd.module.css";
 import axios from "axios";
-import NotesList from "../NotesList/NotesList";
 import { useDispatch } from "react-redux";
 
 function NotesAdd() {
@@ -15,8 +14,8 @@ function NotesAdd() {
     dispatch({ type: "API_REQUEST_START" });
 
     try {
-      const res = await axios.post("http://localhost:8000/note", payload);
-      getNotes();
+      const res = await axios.post("https://iwcn.onrender.com/note", payload);
+      await getNotes();
       setDescription("");
       setTitle("");
       dispatch({ type: "API_REQUEST_END" });
@@ -27,10 +26,16 @@ function NotesAdd() {
   };
 
   async function getNotes() {
+    dispatch({ type: "API_REQUEST_START" });
+
     try {
-      const res = await axios.get("http://localhost:8000/note");
+      const res = await axios.get("https://iwcn.onrender.com/note");
       dispatch({ type: "GET_ALL_NOTES", payload: res.data.message });
-    } catch (err) {}
+      dispatch({ type: "API_REQUEST_END" });
+    } catch (err) {
+      dispatch({ type: "API_REQUEST_END" });
+      console.log(err);
+    }
   }
 
   useEffect(() => {

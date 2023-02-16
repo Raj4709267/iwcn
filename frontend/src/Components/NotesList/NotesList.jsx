@@ -15,8 +15,8 @@ function NotesList() {
   const handleDelete = async (id) => {
     dispatch({ type: "API_REQUEST_START" });
     try {
-      const res = await axios.delete(`http://localhost:8000/note/${id}`);
-      getNotes();
+      const res = await axios.delete(`https://iwcn.onrender.com/note/${id}`);
+      await getNotes();
       dispatch({ type: "API_REQUEST_END" });
     } catch (err) {
       dispatch({ type: "API_REQUEST_END" });
@@ -25,10 +25,15 @@ function NotesList() {
   };
 
   async function getNotes() {
+    dispatch({ type: "API_REQUEST_START" });
+
     try {
-      const res = await axios.get("http://localhost:8000/note");
+      const res = await axios.get("https://iwcn.onrender.com/note");
       dispatch({ type: "GET_ALL_NOTES", payload: res.data.message });
+      dispatch({ type: "API_REQUEST_END" });
     } catch (err) {
+      dispatch({ type: "API_REQUEST_END" });
+
       console.log(err);
     }
   }
