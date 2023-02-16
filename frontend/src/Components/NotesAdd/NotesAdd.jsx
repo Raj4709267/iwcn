@@ -3,14 +3,17 @@ import React, { useEffect, useState } from "react";
 import style from "./NotesAdd.module.css";
 import axios from "axios";
 import { useDispatch } from "react-redux";
+import { useToast } from "@chakra-ui/react";
 
 function NotesAdd() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const dispatch = useDispatch();
+  const toast = useToast();
 
   const handleAddNotes = async () => {
     const payload = { title, description };
+
     dispatch({ type: "API_REQUEST_START" });
 
     try {
@@ -70,6 +73,7 @@ function NotesAdd() {
           _hover={{ bgColor: "#e5a120" }}
           borderRadius="24px"
           onClick={handleAddNotes}
+          isDisabled={title == "" || description == ""}
         >
           Add Note
         </Button>
