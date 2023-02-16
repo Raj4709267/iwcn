@@ -31,7 +31,7 @@ Able to Edit any Note
 
 Able to Delete any Note
 
-Able to use in any device Like Mobile, Tab, Laptop, Desktop
+You can use in any device Like Mobile, Tab, Laptop, Desktop
 
 
 
