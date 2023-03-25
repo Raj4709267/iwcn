@@ -17,7 +17,7 @@ function NotesAdd() {
     dispatch({ type: "API_REQUEST_START" });
 
     try {
-      const res = await axios.post("https://iwcn.onrender.com/note", payload);
+      const res = await axios.post("http://localhost:8000/note", payload);
       await getNotes();
       setDescription("");
       setTitle("");
@@ -32,7 +32,7 @@ function NotesAdd() {
     dispatch({ type: "API_REQUEST_START" });
 
     try {
-      const res = await axios.get("https://iwcn.onrender.com/note");
+      const res = await axios.get("http://localhost:8000/note");
       dispatch({ type: "GET_ALL_NOTES", payload: res.data.message });
       dispatch({ type: "API_REQUEST_END" });
     } catch (err) {
