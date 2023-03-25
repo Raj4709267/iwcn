@@ -1,7 +1,7 @@
 const { connection } = require("../db/db");
 
 const noteAdd = async (req, res) => {
-  const { title, description } = req.body;
+  const { title, description } = req.body; 
   if (!title || !description) {
     res.status(404).json({ message: "Fill all the detials" });
   } else {

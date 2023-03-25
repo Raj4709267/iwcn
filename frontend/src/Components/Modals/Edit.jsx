@@ -29,7 +29,7 @@ function Edit({ data }) {
 
     try {
       const res = await axios.put(
-        `https://iwcn.onrender.com/note/${data.id}`,
+        `http://localhost:8000/note/${data.id}`,
         payload
       );
       await getNotes();
@@ -44,7 +44,7 @@ function Edit({ data }) {
 
   async function getNotes() {
     try {
-      const res = await axios.get("https://iwcn.onrender.com/note");
+      const res = await axios.get("http://localhost:8000/note");
       dispatch({ type: "GET_ALL_NOTES", payload: res.data.message });
     } catch (err) {}
   }
